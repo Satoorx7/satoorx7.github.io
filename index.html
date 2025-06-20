@@ -2,6 +2,7 @@
 <head>
   <meta charset="UTF-8">
   <title>🛠️ أدوات SaToor X7</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     body {
       background-color: #0d1117;
@@ -118,6 +119,22 @@
       color: #aaa;
       font-size: 14px;
     }
+    .nav-pages {
+      margin: 30px 0;
+    }
+    .nav-pages a {
+      background: #1c1f26;
+      color: #58a6ff;
+      margin: 5px;
+      padding: 8px 16px;
+      border-radius: 8px;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .nav-pages a:hover {
+      background: #2c313a;
+      color: #00ff99;
+    }
   </style>
 </head>
 <body>
@@ -131,7 +148,7 @@
   <button onclick="filterCategory('video')">فيديوهات</button>
   <button onclick="filterCategory('hacking')">اختراق</button>
   <button onclick="filterCategory('beginner')">مبتدئين</button>
-</div><!-- أداة DDOS --><div class="tool termux hacking">
+</div><div class="tool termux hacking">
   <div class="status">✅ تعمل</div>
   <h2>DDOS هجوم وهمي</h2>
   <p>هجوم تعليمي لفهم آلية الضغط على المواقع فقط.</p>
@@ -139,7 +156,7 @@
   <input type="text" id="ddos" value="git clone https://github.com/Satoorx7/ddos-tool" readonly>
   <button onclick="copyCmd('ddos')">📋 نسخ</button>
   <a href="#">🎥 شرح فيديو</a>
-</div><!-- تحميل فيديوهات --><div class="tool video">
+</div><div class="tool video">
   <div class="status">✅ تعمل</div>
   <h2>تحميل فيديوهات بدون علامة مائية</h2>
   <p>دعم TikTok, YouTube, Instagram، مع اختيار جودة.</p>
@@ -147,7 +164,7 @@
   <input type="text" id="vid" value="git clone https://github.com/Satoorx7/video-downloader" readonly>
   <button onclick="copyCmd('vid')">📋 نسخ</button>
   <a href="#">🎥 شرح فيديو</a>
-</div><!-- أدوات Termux --><div class="tool termux beginner">
+</div><div class="tool termux beginner">
   <div class="status">✅ تعمل</div>
   <h2>تثبيت أدوات Termux دفعة واحدة</h2>
   <p>أوامر تهيئة Termux + تثبيت أهم الأدوات للمبتدئين.</p>
@@ -155,7 +172,7 @@
   <input type="text" id="setup" value="bash <(curl -s https://raw.githubusercontent.com/Satoorx7/auto-install/main/setup.sh)" readonly>
   <button onclick="copyCmd('setup')">📋 نسخ</button>
   <a href="#">🎥 شرح فيديو</a>
-</div><!-- خداع صفحات وهمية --><div class="tool hacking">
+</div><div class="tool hacking">
   <div class="status">✅ تعمل</div>
   <h2>أداة صفحات وهمية</h2>
   <p>إنشاء صفحات دخول وهمية لتجارب الحماية فقط.</p>
@@ -163,11 +180,17 @@
   <input type="text" id="phish" value="git clone https://github.com/Satoorx7/phishing-kit" readonly>
   <button onclick="copyCmd('phish')">📋 نسخ</button>
   <a href="#">🎥 شرح فيديو</a>
+</div><div class="nav-pages">
+  <a href="about.html">من هو SaToor X7؟</a>
+  <a href="faq.html">الأسئلة الشائعة</a>
+  <a href="tools.html">كل الأدوات</a>
+  <a href="test-page.html">تجربة أدوات وهمية</a>
 </div><div class="footer-links">
-  <a href="https://www.instagram.com/_zr943" target="_blank">📩 تواصل عبر Instagram</a>
-  <a href="https://t.me/SatoorX7" target="_blank">📣 قناتي على Telegram</a>
+  <a href="https://www.instagram.com/_zr943" target="_blank">📩 Instagram</a>
+  <a href="https://t.me/SatoorX7" target="_blank">📣 Telegram</a>
 </div>
-<div class="note">⚠️ هذا الموقع تعليمي فقط – لا تتحمل الإدارة مسؤولية سوء الاستخدام.</div><script>
+<div class="note">⚠️ هذا الموقع تعليمي فقط – لا تتحمل الإدارة مسؤولية سوء الاستخدام.</div>
+<script>
   function copyCmd(id) {
     var copyText = document.getElementById(id);
     copyText.select();
@@ -193,5 +216,6 @@
       }
     }
   }
-</script></body>
+</script>
+</body>
 </html>
