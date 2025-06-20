@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>تجربة أدوات وهمية</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      background-color: #0d1117;
+      color: white;
+      font-family: 'Tahoma', sans-serif;
+      padding: 30px;
+      text-align: center;
+    }
+    h1 {
+      color: #ff3c3c;
+      margin-bottom: 20px;
+      text-shadow: 1px 1px 4px #000;
+    }
+    .tool-box {
+      background-color: #161b22;
+      border-radius: 10px;
+      padding: 20px;
+      margin: 20px auto;
+      max-width: 600px;
+      box-shadow: 0 0 10px #00000050;
+      transition: 0.3s;
+    }
+    .tool-box:hover {
+      transform: scale(1.01);
+      box-shadow: 0 0 20px #ff3c3c33;
+    }
+    .tool-box h2 {
+      color: #58a6ff;
+    }
+    .tool-box button {
+      padding: 10px 20px;
+      background-color: #ff3c3c;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      margin-top: 10px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .tool-box button:hover {
+      background-color: #ff5e5e;
+    }
+    .output {
+      margin-top: 15px;
+      color: #00ff99;
+      font-family: monospace;
+      white-space: pre-wrap;
+    }
+    a.back {
+      display: inline-block;
+      margin-top: 30px;
+      color: #58a6ff;
+      text-decoration: none;
+      font-size: 16px;
+    }
+    a.back:hover {
+      color: #00ff99;
+    }
+  </style>
+</head>
+<body>
+  <h1>🧪 تجربة أدوات SaToor X7 الوهمية</h1>
+
+  <div class="tool-box">
+    <h2>📡 فحص IP</h2>
+    <p>اضغط لتجربة فحص وهمي لعناوين IP</p>
+    <button onclick="fakeOutput('ip')">تشغيل</button>
+    <div class="output" id="ip"></div>
+  </div>
+
+  <div class="tool-box">
+    <h2>🔐 توليد كلمة سر عشوائية</h2>
+    <p>أداة وهمية لإنشاء كلمات سر قوية</p>
+    <button onclick="fakeOutput('pass')">توليد</button>
+    <div class="output" id="pass"></div>
+  </div>
+
+  <div class="tool-box">
+    <h2>📷 تفعيل كاميرا الضحية (مزيف)</h2>
+    <p>أداة توضيحية فقط لعرض كيف تعمل الأدوات</p>
+    <button onclick="fakeOutput('cam')">تشغيل</button>
+    <div class="output" id="cam"></div>
+  </div>
+
+  <a class="back" href="tools.html">⬅️ العودة للأدوات</a>
+
+  <script>
+    function fakeOutput(id) {
+      let output = {
+        ip: "جارٍ الفحص...\nعنوان الضحية: 192.168.1.101\nالموقع: الجزائر",
+        pass: "تم توليد كلمة سر: X7#Aq9!zK12$",
+        cam: "⚠️ تم تفعيل كاميرا مزيفة!\nجارٍ تحميل صورة وهمية..."
+      };
+      document.getElementById(id).innerText = output[id];
+    }
+  </script>
+</body>
+</html>
