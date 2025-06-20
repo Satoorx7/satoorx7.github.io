@@ -2,34 +2,47 @@
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8">
-  <title>أدوات نظام Termux</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>📦 أدوات SaToor X7</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     body {
       background-color: #0d1117;
       color: white;
-      font-family: 'Tahoma', sans-serif;
-      padding: 30px;
+      font-family: 'Cairo', sans-serif;
+      padding: 20px;
       text-align: center;
     }
     h1 {
       color: #ff3c3c;
       margin-bottom: 20px;
     }
+    .search-box {
+      margin: 20px auto;
+      max-width: 500px;
+    }
+    .search-box input {
+      width: 100%;
+      padding: 12px;
+      border-radius: 8px;
+      border: none;
+      font-size: 16px;
+    }
     .tool {
       background-color: #161b22;
-      margin: 15px auto;
       padding: 20px;
+      margin: 15px auto;
       border-radius: 15px;
       width: 90%;
       max-width: 700px;
       text-align: right;
+      box-shadow: 0 0 10px #00000055;
     }
     .tool h2 {
       color: #58a6ff;
     }
     .tool p {
       color: #ccc;
+      font-size: 14px;
     }
     .tool input {
       width: 100%;
@@ -39,7 +52,7 @@
       margin-top: 10px;
     }
     .tool button {
-      margin-top: 10px;
+      margin-top: 8px;
       padding: 8px 16px;
       background-color: #ff3c3c;
       color: white;
@@ -47,57 +60,106 @@
       border-radius: 5px;
       cursor: pointer;
     }
-    a.back {
+    .tool a {
       display: inline-block;
-      margin-top: 30px;
-      color: #58a6ff;
+      margin-top: 8px;
+      color: #00ff99;
       text-decoration: none;
-      font-size: 16px;
     }
-    a.back:hover {
+    .tool a:hover {
+      text-decoration: underline;
+    }
+    .note {
+      margin-top: 30px;
+      color: #999;
+      font-size: 13px;
+    }
+    .footer {
+      margin-top: 40px;
+    }
+    .footer a {
+      margin: 0 10px;
+      text-decoration: none;
+      color: #58a6ff;
+    }
+    .footer a:hover {
       color: #00ff99;
     }
   </style>
 </head>
 <body>
-  <h1>🧰 أدوات نظام Termux</h1>
+  <h1>🛠️ أدوات SaToor X7</h1>
 
-  <div class="tool">
-    <h2>📶 فحص الشبكة</h2>
-    <p>فحص اتصال الإنترنت</p>
-    <input type="text" id="ping" value="ping -c 4 google.com" readonly>
-    <button onclick="copyCmd('ping')">📋 نسخ</button>
+  <div class="search-box">
+    <input type="text" id="search" placeholder="🔍 ابحث عن أداة..." onkeyup="searchTools()">
   </div>
 
   <div class="tool">
-    <h2>📦 تثبيت جميع الحزم الأساسية</h2>
-    <p>للمبتدئين الجدد في تيرمكس</p>
-    <input type="text" id="install" value="pkg update && pkg upgrade && pkg install git curl python" readonly>
-    <button onclick="copyCmd('install')">📋 نسخ</button>
+    <h2>DDOS هجوم وهمي</h2>
+    <p>هجوم تعليمي لفهم آلية الضغط على المواقع.</p>
+    <input type="text" id="ddos" value="git clone https://github.com/Satoorx7/ddos-tool" readonly>
+    <button onclick="copyCmd('ddos')">📋 نسخ</button>
   </div>
 
   <div class="tool">
-    <h2>📁 معرفة المساحة المتبقية</h2>
-    <p>تحقق من المساحة</p>
-    <input type="text" id="space" value="df -h" readonly>
-    <button onclick="copyCmd('space')">📋 نسخ</button>
+    <h2>تحميل فيديوهات بدون علامة مائية</h2>
+    <p>دعم TikTok, YouTube, Instagram مع اختيار الجودة.</p>
+    <input type="text" id="vid" value="git clone https://github.com/Satoorx7/video-downloader" readonly>
+    <button onclick="copyCmd('vid')">📋 نسخ</button>
   </div>
 
   <div class="tool">
-    <h2>🔧 إصدار Termux والنظام</h2>
-    <p>فحص الإصدار</p>
-    <input type="text" id="version" value="termux-info" readonly>
-    <button onclick="copyCmd('version')">📋 نسخ</button>
+    <h2>تثبيت أدوات Termux للمبتدئين</h2>
+    <p>أوامر تهيئة Termux + تثبيت الأدوات الأساسية.</p>
+    <input type="text" id="setup" value="bash <(curl -s https://raw.githubusercontent.com/Satoorx7/auto-install/main/setup.sh)" readonly>
+    <button onclick="copyCmd('setup')">📋 نسخ</button>
   </div>
 
-  <a class="back" href="tools.html">⬅️ العودة للأدوات</a>
+  <div class="tool">
+    <h2>أداة الصفحات الوهمية</h2>
+    <p>تجارب تعليمية في الحماية والهندسة الاجتماعية.</p>
+    <input type="text" id="phish" value="git clone https://github.com/Satoorx7/phishing-kit" readonly>
+    <button onclick="copyCmd('phish')">📋 نسخ</button>
+  </div>
+
+  <div class="tool">
+    <h2>📘 أدوات للمبتدئين</h2>
+    <p>شرح وتهيئة أساسية لأوامر لينكس وتيرمكس.</p>
+    <input type="text" id="beginner" value="git clone https://github.com/Satoorx7/beginner-tools" readonly>
+    <button onclick="copyCmd('beginner')">📋 نسخ</button>
+  </div>
+
+  <div class="tool">
+    <h2>🎭 روابط وهمية</h2>
+    <p>روابط مخصصة وهمية لخداع واختبار الوعي الأمني.</p>
+    <input type="text" id="fake" value="git clone https://github.com/Satoorx7/fake-links" readonly>
+    <button onclick="copyCmd('fake')">📋 نسخ</button>
+  </div>
+
+  <div class="note">⚠️ جميع الأدوات لأغراض تعليمية فقط، لا نتحمل أي مسؤولية عن سوء الاستخدام.</div>
+
+  <div class="footer">
+    <a href="https://www.instagram.com/_zr943" target="_blank">📩 Instagram</a>
+    <a href="https://t.me/SatoorX7" target="_blank">📣 Telegram</a>
+    <a href="index.html">🏠 رجوع إلى الصفحة الرئيسية</a>
+  </div>
 
   <script>
     function copyCmd(id) {
-      var copyText = document.getElementById(id);
-      copyText.select();
+      const input = document.getElementById(id);
+      input.select();
+      input.setSelectionRange(0, 99999);
       document.execCommand("copy");
-      alert("✅ تم نسخ الأمر:\n" + copyText.value);
+      alert("✅ تم نسخ الأمر:\n" + input.value);
+    }
+
+    function searchTools() {
+      const input = document.getElementById("search").value.toLowerCase();
+      const tools = document.getElementsByClassName("tool");
+      for (let i = 0; i < tools.length; i++) {
+        const title = tools[i].getElementsByTagName("h2")[0].innerText.toLowerCase();
+        tools[i].style.display = title.includes(input) ? "block" : "none";
+      }
     }
   </script>
 </body>
