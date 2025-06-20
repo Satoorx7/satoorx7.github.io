@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>أدوات نظام Termux</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      background-color: #0d1117;
+      color: white;
+      font-family: 'Tahoma', sans-serif;
+      padding: 30px;
+      text-align: center;
+    }
+    h1 {
+      color: #ff3c3c;
+      margin-bottom: 20px;
+    }
+    .tool {
+      background-color: #161b22;
+      margin: 15px auto;
+      padding: 20px;
+      border-radius: 15px;
+      width: 90%;
+      max-width: 700px;
+      text-align: right;
+    }
+    .tool h2 {
+      color: #58a6ff;
+    }
+    .tool p {
+      color: #ccc;
+    }
+    .tool input {
+      width: 100%;
+      padding: 10px;
+      border-radius: 5px;
+      border: none;
+      margin-top: 10px;
+    }
+    .tool button {
+      margin-top: 10px;
+      padding: 8px 16px;
+      background-color: #ff3c3c;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    a.back {
+      display: inline-block;
+      margin-top: 30px;
+      color: #58a6ff;
+      text-decoration: none;
+      font-size: 16px;
+    }
+    a.back:hover {
+      color: #00ff99;
+    }
+  </style>
+</head>
+<body>
+  <h1>🧰 أدوات نظام Termux</h1>
+
+  <div class="tool">
+    <h2>📶 فحص الشبكة</h2>
+    <p>فحص اتصال الإنترنت</p>
+    <input type="text" id="ping" value="ping -c 4 google.com" readonly>
+    <button onclick="copyCmd('ping')">📋 نسخ</button>
+  </div>
+
+  <div class="tool">
+    <h2>📦 تثبيت جميع الحزم الأساسية</h2>
+    <p>للمبتدئين الجدد في تيرمكس</p>
+    <input type="text" id="install" value="pkg update && pkg upgrade && pkg install git curl python" readonly>
+    <button onclick="copyCmd('install')">📋 نسخ</button>
+  </div>
+
+  <div class="tool">
+    <h2>📁 معرفة المساحة المتبقية</h2>
+    <p>تحقق من المساحة</p>
+    <input type="text" id="space" value="df -h" readonly>
+    <button onclick="copyCmd('space')">📋 نسخ</button>
+  </div>
+
+  <div class="tool">
+    <h2>🔧 إصدار Termux والنظام</h2>
+    <p>فحص الإصدار</p>
+    <input type="text" id="version" value="termux-info" readonly>
+    <button onclick="copyCmd('version')">📋 نسخ</button>
+  </div>
+
+  <a class="back" href="tools.html">⬅️ العودة للأدوات</a>
+
+  <script>
+    function copyCmd(id) {
+      var copyText = document.getElementById(id);
+      copyText.select();
+      document.execCommand("copy");
+      alert("✅ تم نسخ الأمر:\n" + copyText.value);
+    }
+  </script>
+</body>
+</html>
