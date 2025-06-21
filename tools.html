@@ -1,74 +1,192 @@
 <!DOCTYPE html><html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8">
-  <title>🛠️ قائمة الأدوات - SaToor X7</title>
+  <title>🛠️ أدوات SaToor X7</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    body {
-      background-color: #ff3c3c;
-      color: black;
+    * {
       font-family: 'Cairo', sans-serif;
-      padding: 20px;
-      text-align: right;
+      scroll-behavior: smooth;
+    }
+    body {
+      background-color: #ff0000;
+      color: black;
+      margin: 0;
+      padding: 0;
+      text-align: center;
     }
     h1 {
-      color: #fff;
-      text-align: center;
-      margin-bottom: 30px;
+      font-size: 36px;
+      color: black;
+      background-color: white;
+      padding: 15px;
+      margin: 0;
+      text-shadow: 2px 2px 6px red;
+    }
+    .search-box {
+      margin: 20px auto;
+      max-width: 500px;
+      padding: 0 10px;
+    }
+    .search-box input {
+      width: 100%;
+      padding: 12px;
+      border-radius: 8px;
+      border: none;
+      font-size: 16px;
     }
     .tool {
-      background-color: #fff;
+      background-color: #1a1a1a;
+      color: white;
       padding: 20px;
-      margin-bottom: 20px;
-      border-radius: 10px;
-      box-shadow: 0 0 8px rgba(0,0,0,0.2);
+      margin: 15px auto;
+      border-radius: 15px;
+      width: 90%;
+      max-width: 700px;
+      text-align: right;
+      box-shadow: 0 0 10px #00000099;
+      transition: 0.3s;
+    }
+    .tool:hover {
+      transform: scale(1.02);
+      box-shadow: 0 0 20px black;
     }
     .tool h2 {
-      margin-top: 0;
-      color: #ff3c3c;
+      color: #00ff99;
     }
-    .tool pre {
-      background: #f3f3f3;
+    .tool p {
+      color: #ccc;
+      font-size: 14px;
+    }
+    .tool input {
+      width: 100%;
       padding: 10px;
       border-radius: 5px;
-      direction: ltr;
-      overflow-x: auto;
-    }
-    .tool a {
-      display: inline-block;
+      border: none;
       margin-top: 10px;
-      color: #007bff;
-      text-decoration: none;
     }
-    .tool a:hover {
-      text-decoration: underline;
+    .tool button {
+      margin-top: 8px;
+      padding: 8px 16px;
+      background-color: red;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .back-btn {
+      position: fixed;
+      top: 10px;
+      left: 10px;
+      background-color: black;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
     }
   </style>
 </head>
 <body>
-  <h1>🛠️ قائمة أدوات SaToor X7 (60 أداة)</h1>  <div class="tool">
-    <h2>1- أداة DDOS هجوم وهمي</h2>
-    <p>أداة لتنفيذ هجمات DDOS تعليمية على الروابط أو المواقع لتجربة الضغط فقط.</p>
-    <strong>أمر التثبيت:</strong>
-    <pre>git clone https://github.com/Satoorx7/ddos-tool</pre>
-    <strong>طريقة التشغيل:</strong>
-    <pre>cd ddos-tool && python3 ddos.py</pre>
-    <a href="https://www.youtube.com/watch?v=xxxx" target="_blank">🎥 شرح فيديو</a>
-  </div>  <div class="tool">
-    <h2>2- أداة تحميل فيديوهات بدون علامة مائية</h2>
-    <p>تحميل فيديوهات من TikTok وYouTube وInstagram بجودات مختلفة بدون علامات مائية.</p>
-    <strong>أمر التثبيت:</strong>
-    <pre>git clone https://github.com/Satoorx7/video-downloader</pre>
-    <strong>طريقة التشغيل:</strong>
-    <pre>cd video-downloader && python3 main.py</pre>
-    <a href="https://www.youtube.com/watch?v=xxxx" target="_blank">🎥 شرح فيديو</a>
-  </div>  <div class="tool">
-    <h2>3- أداة تثبيت Termux للمبتدئين</h2>
-    <p>تقوم بتثبيت الأدوات الأساسية تلقائيًا للمستخدمين الجدد على Termux.</p>
-    <strong>أمر التثبيت:</strong>
-    <pre>bash &lt;(curl -s https://raw.githubusercontent.com/Satoorx7/auto-install/main/setup.sh)</pre>
-    <strong>طريقة التشغيل:</strong>
-    <pre>اتبع التعليمات بعد تشغيل السكربت</pre>
-    <a href="https://www.youtube.com/watch?v=xxxx" target="_blank">🎥 شرح فيديو</a>
-  </div>  <!-- كرر نفس الكتلة لكل أداة حتى تصل لـ 60 أداة --></body>
+  <h1>🔴 SaToor X7 🔴<br>🧰 أقوى أدوات Termux</h1>  <div class="search-box">
+    <input type="text" id="search" placeholder="🔍 ابحث عن أداة..." onkeyup="searchTools()">
+  </div><a href="index.html" class="back-btn">🔙 رجوع</a>
+
+  <div id="tools-container"><div class="tool">
+  <h2>🛠️ Tool-X</h2>
+  <p>مكتبة ضخمة تحتوي على أكثر من 370 أداة.</p>
+  <input type="text" id="toolx" value="git clone https://github.com/Rajkumrdusad/Tool-X" readonly>
+  <button onclick="copyCmd('toolx')">📋 نسخ</button>
+</div>
+
+<div class="tool">
+  <h2>🔐 Metasploit</h2>
+  <p>أقوى منصة لاختبار الاختراق.</p>
+  <input type="text" id="meta" value="pkg install unstable-repo && pkg install metasploit" readonly>
+  <button onclick="copyCmd('meta')">📋 نسخ</button>
+</div>
+
+<div class="tool">
+  <h2>🌐 Nmap</h2>
+  <p>لفحص الشبكات والمنافذ في النظام.</p>
+  <input type="text" id="nmap" value="pkg install nmap" readonly>
+  <button onclick="copyCmd('nmap')">📋 نسخ</button>
+</div>
+
+<div class="tool">
+  <h2>🕵️ Hydra</h2>
+  <p>أداة تخمين كلمات المرور Brute Force.</p>
+  <input type="text" id="hydra" value="pkg install hydra" readonly>
+  <button onclick="copyCmd('hydra')">📋 نسخ</button>
+</div>
+
+<div class="tool">
+  <h2>🎣 Zphisher</h2>
+  <p>صفحات وهمية لتدريب الحماية والهندسة الاجتماعية.</p>
+  <input type="text" id="zphisher" value="git clone https://github.com/htr-tech/zphisher" readonly>
+  <button onclick="copyCmd('zphisher')">📋 نسخ</button>
+</div>
+
+<div class="tool">
+  <h2>📷 CamPhish</h2>
+  <p>كاميرا وهمية تعليمية لتجربة التصوير عن بُعد.</p>
+  <input type="text" id="cam" value="git clone https://github.com/techchipnet/CamPhish" readonly>
+  <button onclick="copyCmd('cam')">📋 نسخ</button>
+</div>
+
+<div class="tool">
+  <h2>📍 IP-Tracer</h2>
+  <p>تتبع IP بشكل مرئي وتعلم الشبكات.</p>
+  <input type="text" id="ip" value="git clone https://github.com/rajkumardusad/IP-Tracer" readonly>
+  <button onclick="copyCmd('ip')">📋 نسخ</button>
+</div>
+
+<div class="tool">
+  <h2>⬇️ yt-dlp</h2>
+  <p>تحميل فيديوهات من YouTube و TikTok.</p>
+  <input type="text" id="yt" value="pkg install python && pip install yt-dlp" readonly>
+  <button onclick="copyCmd('yt')">📋 نسخ</button>
+</div>
+
+<div class="tool">
+  <h2>📸 Instaloader</h2>
+  <p>تحميل صور وفيديوهات من Instagram.</p>
+  <input type="text" id="insta" value="pip install instaloader" readonly>
+  <button onclick="copyCmd('insta')">📋 نسخ</button>
+</div>
+
+<div class="tool">
+  <h2>🧠 Neofetch</h2>
+  <p>عرض معلومات النظام بشكل أنيق.</p>
+  <input type="text" id="neo" value="pkg install neofetch" readonly>
+  <button onclick="copyCmd('neo')">📋 نسخ</button>
+</div>
+
+<div class="tool">
+  <h2>💥 cmatrix</h2>
+  <p>عرض مؤثرات Matrix في التيرمكس.</p>
+  <input type="text" id="cmatrix" value="pkg install cmatrix" readonly>
+  <button onclick="copyCmd('cmatrix')">📋 نسخ</button>
+</div>
+
+  </div>  <script>
+    function copyCmd(id) {
+      var copyText = document.getElementById(id);
+      copyText.select();
+      copyText.setSelectionRange(0, 99999);
+      document.execCommand("copy");
+      alert("✅ تم نسخ الأمر:\n" + copyText.value);
+    }
+
+    function searchTools() {
+      var input = document.getElementById("search").value.toLowerCase();
+      var tools = document.getElementsByClassName("tool");
+      for (var i = 0; i < tools.length; i++) {
+        var h2 = tools[i].getElementsByTagName("h2")[0];
+        var title = h2.textContent || h2.innerText;
+        tools[i].style.display = title.toLowerCase().includes(input) ? "" : "none";
+      }
+    }
+  </script></body>
 </html>
