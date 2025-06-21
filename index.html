@@ -1,73 +1,166 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<!DOCTYPE html><html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8">
-  <title>مرحبا بك في SaToor X7</title>
+  <title>🛠️ أدوات SaToor X7</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     body {
-      margin: 0;
-      padding: 0;
-      background-color: red;
+      background-color: #ff3c3c;
       color: black;
       font-family: 'Cairo', sans-serif;
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
+      padding: 20px;
       text-align: center;
     }
-    .logo {
-      position: absolute;
-      top: 30px;
+    h1 {
       font-size: 32px;
       color: white;
-      font-weight: bold;
-      text-shadow: 2px 2px 8px #000;
+      text-shadow: 2px 2px 6px #000;
+      margin-bottom: 30px;
     }
-    h1 {
-      font-size: 36px;
-      margin-bottom: 20px;
+    .search-box {
+      margin: 20px auto;
+      max-width: 500px;
     }
-    p {
-      font-size: 20px;
-      max-width: 600px;
-      line-height: 1.6;
-    }
-    a.button {
-      margin-top: 30px;
-      background-color: black;
-      color: red;
-      padding: 14px 28px;
+    .search-box input {
+      width: 100%;
+      padding: 12px;
       border-radius: 8px;
-      text-decoration: none;
-      font-size: 18px;
-      font-weight: bold;
+      border: none;
+      font-size: 16px;
+    }
+    .filter-btns button {
+      margin: 5px;
+      padding: 8px 14px;
+      background-color: black;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    .filter-btns button:hover {
+      background-color: #222;
+    }
+    .tool {
+      background-color: white;
+      color: black;
+      padding: 20px;
+      margin: 15px auto;
+      border-radius: 12px;
+      width: 90%;
+      max-width: 700px;
+      text-align: right;
+      box-shadow: 0 0 10px #00000033;
       transition: 0.3s;
     }
-    a.button:hover {
-      background-color: white;
-      color: red;
+    .tool:hover {
+      transform: scale(1.02);
+      box-shadow: 0 0 20px #00000033;
     }
-    .footer {
-      position: absolute;
-      bottom: 20px;
+    .tool h2 {
+      color: #111;
+    }
+    .tool p {
+      font-size: 15px;
+      color: #333;
+    }
+    .tool input {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    .tool button {
+      margin-top: 10px;
+      padding: 8px 16px;
+      background-color: #000;
       color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .tool a {
+      display: inline-block;
+      margin-top: 8px;
+      color: #0066cc;
+      text-decoration: none;
       font-size: 14px;
+    }
+    .tool a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
-  <div class="logo">SaToor X7</div>
-  <h1>👋 مرحبًا بك في عالم SaToor X7 🔥</h1>
-  <p>
-    🚀 اكتشف أقوى أدوات Termux<br>
-    🧠 تعلم أوامر اللينكس بسهولة<br>
-    💻 جرب أدوات وهمية بأمان<br>
-    🎯 كل هذا وأكثر في مكان واحد!<br>
-  </p>
-  <a href="tools.html" class="button">دخول إلى الأدوات ⚙️</a>
-  <div class="footer">© 2025 SaToor X7 - جميع الحقوق محفوظة.</div>
-</body>
+  <h1>🛠️ أدوات SaToor X7</h1>  <div class="search-box">
+    <input type="text" id="search" placeholder="🔍 ابحث عن أداة..." onkeyup="searchTools()">
+  </div>  <div class="filter-btns">
+    <button onclick="filterCategory('all')">عرض الكل</button>
+    <button onclick="filterCategory('termux')">تيرمكس</button>
+    <button onclick="filterCategory('fake')">وهمية</button>
+    <button onclick="filterCategory('video')">فيديوهات</button>
+    <button onclick="filterCategory('other')">أخرى</button>
+  </div>  <div id="tools-container">
+    <!-- سيتم توليد الأدوات هنا تلقائياً -->
+  </div>  <script>
+    const tools = [];
+    for (let i = 1; i <= 60; i++) {
+      tools.push({
+        title: `أداة رقم ${i}`,
+        description: `شرح مبسط للأداة ${i} مع رابط أو فيديو`,
+        category: i % 4 === 0 ? 'termux' : i % 4 === 1 ? 'fake' : i % 4 === 2 ? 'video' : 'other',
+        command: `git clone https://github.com/SatoorX7/tool${i}`,
+        video: `https://youtube.com/video${i}`
+      });
+    }
+
+    function renderTools(filter = 'all') {
+      const container = document.getElementById("tools-container");
+      container.innerHTML = "";
+      tools.filter(tool => filter === 'all' || tool.category === filter)
+           .forEach((tool, index) => {
+        container.innerHTML += `
+          <div class="tool ${tool.category}">
+            <h2>${tool.title}</h2>
+            <p>${tool.description}</p>
+            <input type="text" id="cmd${index}" value="${tool.command}" readonly>
+            <button onclick="copyCmd('cmd${index}')">📋 نسخ</button>
+            <a href="${tool.video}" target="_blank">🎥 فيديو</a>
+          </div>
+        `;
+      });
+    }
+
+    function copyCmd(id) {
+      const input = document.getElementById(id);
+      input.select();
+      input.setSelectionRange(0, 99999);
+      document.execCommand("copy");
+      alert("✅ تم نسخ الأمر:\n" + input.value);
+    }
+
+    function searchTools() {
+      const searchValue = document.getElementById("search").value.toLowerCase();
+      const filtered = tools.filter(tool => tool.title.toLowerCase().includes(searchValue));
+      const container = document.getElementById("tools-container");
+      container.innerHTML = "";
+      filtered.forEach((tool, index) => {
+        container.innerHTML += `
+          <div class="tool ${tool.category}">
+            <h2>${tool.title}</h2>
+            <p>${tool.description}</p>
+            <input type="text" id="cmd${index}" value="${tool.command}" readonly>
+            <button onclick="copyCmd('cmd${index}')">📋 نسخ</button>
+            <a href="${tool.video}" target="_blank">🎥 فيديو</a>
+          </div>
+        `;
+      });
+    }
+
+    function filterCategory(cat) {
+      renderTools(cat);
+    }
+
+    renderTools();
+  </script></body>
 </html>
