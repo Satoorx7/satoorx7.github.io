@@ -1,166 +1,117 @@
-<!DOCTYPE html><html lang="ar" dir="rtl">
-<head>
+<!DOCTYPE html><html lang="ar" dir="rtl"><head>
   <meta charset="UTF-8">
-  <title>🛠️ أدوات SaToor X7</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>واجهة الدخول | SaToor X7</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
   <style>
     body {
-      background-color: #ff3c3c;
-      color: black;
+      margin: 0;
+      background: linear-gradient(to bottom right, #000000, #111111);
       font-family: 'Cairo', sans-serif;
-      padding: 20px;
-      text-align: center;
-    }
-    h1 {
-      font-size: 32px;
       color: white;
-      text-shadow: 2px 2px 6px #000;
+      overflow: hidden;
+    }
+    .container {
+      text-align: center;
+      padding: 60px 20px;
+    }
+    .logo {
+      font-size: 32px;
+      color: red;
+      font-weight: bold;
+      text-shadow: 2px 2px 8px black;
+      margin-bottom: 10px;
+    }
+    .subtitle {
+      font-size: 18px;
+      color: #ccc;
+      margin-bottom: 40px;
+    }
+    .matrix {
+      font-family: monospace;
+      color: #00ff00;
+      font-size: 16px;
+      height: 50px;
       margin-bottom: 30px;
     }
-    .search-box {
-      margin: 20px auto;
-      max-width: 500px;
+    .btns {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-top: 40px;
     }
-    .search-box input {
-      width: 100%;
-      padding: 12px;
-      border-radius: 8px;
-      border: none;
-      font-size: 16px;
-    }
-    .filter-btns button {
-      margin: 5px;
-      padding: 8px 14px;
-      background-color: black;
-      color: white;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-    }
-    .filter-btns button:hover {
+    .btn {
       background-color: #222;
-    }
-    .tool {
-      background-color: white;
-      color: black;
-      padding: 20px;
-      margin: 15px auto;
-      border-radius: 12px;
-      width: 90%;
-      max-width: 700px;
-      text-align: right;
-      box-shadow: 0 0 10px #00000033;
+      border: 2px solid red;
+      color: white;
+      padding: 15px 30px;
+      border-radius: 10px;
+      font-size: 16px;
+      cursor: pointer;
       transition: 0.3s;
     }
-    .tool:hover {
-      transform: scale(1.02);
-      box-shadow: 0 0 20px #00000033;
-    }
-    .tool h2 {
-      color: #111;
-    }
-    .tool p {
-      font-size: 15px;
-      color: #333;
-    }
-    .tool input {
-      width: 100%;
-      padding: 10px;
-      margin-top: 10px;
-      border-radius: 5px;
-      border: 1px solid #ccc;
-    }
-    .tool button {
-      margin-top: 10px;
-      padding: 8px 16px;
-      background-color: #000;
+    .btn:hover {
+      background-color: red;
       color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
+      transform: scale(1.05);
+      box-shadow: 0 0 15px red;
     }
-    .tool a {
-      display: inline-block;
-      margin-top: 8px;
-      color: #0066cc;
-      text-decoration: none;
+    .footer {
+      position: absolute;
+      bottom: 15px;
+      width: 100%;
+      text-align: center;
+      color: #777;
       font-size: 14px;
-    }
-    .tool a:hover {
-      text-decoration: underline;
     }
   </style>
 </head>
 <body>
-  <h1>🛠️ أدوات SaToor X7</h1>  <div class="search-box">
-    <input type="text" id="search" placeholder="🔍 ابحث عن أداة..." onkeyup="searchTools()">
-  </div>  <div class="filter-btns">
-    <button onclick="filterCategory('all')">عرض الكل</button>
-    <button onclick="filterCategory('termux')">تيرمكس</button>
-    <button onclick="filterCategory('fake')">وهمية</button>
-    <button onclick="filterCategory('video')">فيديوهات</button>
-    <button onclick="filterCategory('other')">أخرى</button>
-  </div>  <div id="tools-container">
-    <!-- سيتم توليد الأدوات هنا تلقائياً -->
-  </div>  <script>
-    const tools = [];
-    for (let i = 1; i <= 60; i++) {
-      tools.push({
-        title: `أداة رقم ${i}`,
-        description: `شرح مبسط للأداة ${i} مع رابط أو فيديو`,
-        category: i % 4 === 0 ? 'termux' : i % 4 === 1 ? 'fake' : i % 4 === 2 ? 'video' : 'other',
-        command: `git clone https://github.com/SatoorX7/tool${i}`,
-        video: `https://youtube.com/video${i}`
-      });
+  <div class="container">
+    <div class="logo">🔴 SaToor X7 🔴</div>
+    <div class="subtitle">🔐 منصة تجريبية سرية لتعليم Termux وعلوم الحماية 💻🧠</div>
+    <div class="matrix" id="matrix"></div>
+    <div class="btns">
+      <button class="btn" onclick="playClickSound(); window.location.href='tools.html';">🛠️ أدوات تيرمكس</button>
+      <button class="btn" onclick="playClickSound(); window.location.href='test-page.html';">💣 تجربة هاكر</button>
+      <button class="btn" onclick="playClickSound(); window.open('https://t.me/SatoorX7', '_blank');">📣 قناة تيليغرام</button>
+    </div>
+  </div>
+  <div class="footer">© 2025 SaToor X7. جميع الحقوق محفوظة.</div>
+  <audio id="clickSound" src="https://www.soundjay.com/buttons/sounds/button-29.mp3"></audio>  <script>
+    // تأثير Matrix كتابة تلقائية
+    const matrixText = [
+      '🎯 أدوات وهمية - تعليمية',
+      '🧠 تحديات ذكاء واختراق أخلاقي',
+      '⚠️ لا تتحمل الإدارة مسؤولية الاستخدام السيء',
+      '🚀 استعد للدخول إلى عالم SaToor X7'
+    ];
+    let index = 0;
+    const matrixBox = document.getElementById("matrix");
+
+    function typeMatrix() {
+      matrixBox.innerText = '';
+      let charIndex = 0;
+      const phrase = matrixText[index];
+      const interval = setInterval(() => {
+        matrixBox.innerText += phrase[charIndex];
+        charIndex++;
+        if (charIndex >= phrase.length) {
+          clearInterval(interval);
+          setTimeout(() => {
+            index = (index + 1) % matrixText.length;
+            typeMatrix();
+          }, 2000);
+        }
+      }, 80);
     }
 
-    function renderTools(filter = 'all') {
-      const container = document.getElementById("tools-container");
-      container.innerHTML = "";
-      tools.filter(tool => filter === 'all' || tool.category === filter)
-           .forEach((tool, index) => {
-        container.innerHTML += `
-          <div class="tool ${tool.category}">
-            <h2>${tool.title}</h2>
-            <p>${tool.description}</p>
-            <input type="text" id="cmd${index}" value="${tool.command}" readonly>
-            <button onclick="copyCmd('cmd${index}')">📋 نسخ</button>
-            <a href="${tool.video}" target="_blank">🎥 فيديو</a>
-          </div>
-        `;
-      });
+    function playClickSound() {
+      const sound = document.getElementById("clickSound");
+      sound.play();
     }
 
-    function copyCmd(id) {
-      const input = document.getElementById(id);
-      input.select();
-      input.setSelectionRange(0, 99999);
-      document.execCommand("copy");
-      alert("✅ تم نسخ الأمر:\n" + input.value);
-    }
-
-    function searchTools() {
-      const searchValue = document.getElementById("search").value.toLowerCase();
-      const filtered = tools.filter(tool => tool.title.toLowerCase().includes(searchValue));
-      const container = document.getElementById("tools-container");
-      container.innerHTML = "";
-      filtered.forEach((tool, index) => {
-        container.innerHTML += `
-          <div class="tool ${tool.category}">
-            <h2>${tool.title}</h2>
-            <p>${tool.description}</p>
-            <input type="text" id="cmd${index}" value="${tool.command}" readonly>
-            <button onclick="copyCmd('cmd${index}')">📋 نسخ</button>
-            <a href="${tool.video}" target="_blank">🎥 فيديو</a>
-          </div>
-        `;
-      });
-    }
-
-    function filterCategory(cat) {
-      renderTools(cat);
-    }
-
-    renderTools();
+    window.onload = typeMatrix;
   </script></body>
 </html>
