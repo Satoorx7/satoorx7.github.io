@@ -1,209 +1,113 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="ar">
 <head>
-  <meta charset="UTF-8">
-  <title>🛠️ أدوات SaToor X7</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>عروض SaToor X7 🔥</title>
   <style>
     body {
-      background-color: #ff3c3c;
-      color: black;
       font-family: 'Cairo', sans-serif;
+      background: #f2f2f2;
+      margin: 0;
+      padding: 0;
+      direction: rtl;
+    }
+    header {
+      background: #e60000;
+      color: white;
       padding: 20px;
       text-align: center;
+      font-size: 26px;
+      font-weight: bold;
     }
-    h1 {
-      font-size: 32px;
-      color: white;
-      text-shadow: 2px 2px 6px #000;
-      margin-bottom: 10px;
+    .container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 20px;
     }
-    #tool-count {
-      color: white;
-      margin-bottom: 20px;
+    .product {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      overflow: hidden;
+      transition: transform 0.3s ease;
+    }
+    .product:hover {
+      transform: scale(1.03);
+    }
+    .product img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+    }
+    .product .info {
+      padding: 15px;
+    }
+    .product .info h3 {
+      margin: 0 0 10px;
       font-size: 18px;
     }
-    .search-box {
-      margin: 20px auto;
-      max-width: 500px;
+    .product .info p {
+      color: green;
+      font-weight: bold;
+      margin: 0 0 10px;
     }
-    .search-box input {
-      width: 100%;
-      padding: 12px;
-      border-radius: 8px;
-      border: none;
-      font-size: 16px;
-    }
-    .filter-btns button {
-      margin: 5px;
-      padding: 8px 14px;
-      background-color: black;
-      color: white;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-    }
-    .filter-btns button:hover {
-      background-color: #222;
-    }
-    .tool {
-      background-color: white;
-      color: black;
-      padding: 20px;
-      margin: 15px auto;
-      border-radius: 12px;
-      width: 90%;
-      max-width: 700px;
-      text-align: right;
-      box-shadow: 0 0 10px #00000033;
-      transition: 0.3s;
-    }
-    .tool:hover {
-      transform: scale(1.02);
-      box-shadow: 0 0 20px #00000033;
-    }
-    .tool h2 {
-      color: #111;
-    }
-    .tool p {
-      font-size: 15px;
-      color: #333;
-    }
-    .tool input {
-      width: 100%;
-      padding: 10px;
-      margin-top: 10px;
-      border-radius: 5px;
-      border: 1px solid #ccc;
-    }
-    .tool button {
-      margin-top: 10px;
-      padding: 8px 16px;
-      background-color: #000;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-    .tool a {
+    .product .info a {
       display: inline-block;
-      margin-top: 8px;
-      color: #0066cc;
-      text-decoration: none;
-      font-size: 14px;
-    }
-    .tool a:hover {
-      text-decoration: underline;
-    }
-    #copy-toast {
-      display: none;
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background: black;
+      padding: 8px 15px;
+      background: #e60000;
       color: white;
-      padding: 10px 20px;
-      border-radius: 8px;
-      z-index: 999;
+      text-decoration: none;
+      border-radius: 6px;
+      font-size: 15px;
+    }
+    footer {
+      background: #111;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      font-size: 14px;
     }
   </style>
 </head>
 <body>
-  <h1>🛠️ أدوات SaToor X7</h1>
-  <h3 id="tool-count">جاري التحميل...</h3>
 
-  <div class="search-box">
-    <input type="text" id="search" placeholder="🔍 ابحث عن أداة..." onkeyup="searchTools()">
+  <header>🔥 عروض اليوم من SaToor X7 🔥</header>
+
+  <div class="container">
+    <!-- منتج 1 -->
+    <div class="product">
+      <img src="https://m.media-amazon.com/images/I/81BESQZbSPL._AC_SL1500_.jpg" alt="سماعات بلوتوث" />
+      <div class="info">
+        <h3>سماعات بلوتوث لاسلكية</h3>
+        <p>خصم 50% 🔥</p>
+        <a href="https://www.amazon.com/dp/B08XYZ?tag=YOUR-ID" target="_blank">شاهد العرض</a>
+      </div>
+    </div>
+
+    <!-- منتج 2 -->
+    <div class="product">
+      <img src="https://m.media-amazon.com/images/I/61Y30DpqRVL._AC_SL1500_.jpg" alt="ساعة ذكية" />
+      <div class="info">
+        <h3>ساعة ذكية مقاومة للماء</h3>
+        <p>عرض محدود 🕐</p>
+        <a href="https://www.amazon.com/dp/B07ABC?tag=YOUR-ID" target="_blank">اشتري الآن</a>
+      </div>
+    </div>
+
+    <!-- منتج 3 -->
+    <div class="product">
+      <img src="https://m.media-amazon.com/images/I/71F9BnLOfLL._AC_SL1500_.jpg" alt="شاحن مغناطيسي" />
+      <div class="info">
+        <h3>شاحن مغناطيسي سريع</h3>
+        <p>وفر حتى 30%</p>
+        <a href="https://www.amazon.com/dp/B09DEF?tag=YOUR-ID" target="_blank">عرض خاص</a>
+      </div>
+    </div>
   </div>
 
-  <div class="filter-btns">
-    <button onclick="filterCategory('all')">عرض الكل</button>
-    <button onclick="filterCategory('termux')">تيرمكس</button>
-    <button onclick="filterCategory('fake')">وهمية</button>
-    <button onclick="filterCategory('video')">فيديوهات</button>
-    <button onclick="filterCategory('other')">أخرى</button>
-  </div>
+  <footer>جميع الحقوق محفوظة © SaToor X7 - التسويق الذكي 2025</footer>
 
-  <div id="tools-container"></div>
-  <div id="copy-toast">✅ تم النسخ</div>
-
-  <script>
-    const tools = [];
-    for (let i = 1; i <= 60; i++) {
-      tools.push({
-        title: `أداة رقم ${i}`,
-        description: `شرح مبسط للأداة ${i} مع رابط أو فيديو`,
-        category: i % 4 === 0 ? 'termux' : i % 4 === 1 ? 'fake' : i % 4 === 2 ? 'video' : 'other',
-        command: `git clone https://github.com/SatoorX7/tool${i}`,
-        video: `https://youtube.com/video${i}`
-      });
-    }
-
-    let currentFilter = 'all';
-
-    function renderTools(filter = 'all') {
-      const container = document.getElementById("tools-container");
-      const countText = document.getElementById("tool-count");
-      container.innerHTML = "";
-      const filtered = tools.filter(tool => filter === 'all' || tool.category === filter);
-      countText.innerText = `عدد الأدوات: ${filtered.length}`;
-      filtered.forEach((tool, index) => {
-        container.innerHTML += `
-          <div class="tool ${tool.category}">
-            <h2>${tool.title}</h2>
-            <p>${tool.description}</p>
-            <input type="text" id="cmd${index}" value="${tool.command}" readonly>
-            <button onclick="copyCmd('cmd${index}')">📋 نسخ</button>
-            <a href="${tool.video}" target="_blank">🎥 فيديو</a>
-          </div>
-        `;
-      });
-    }
-
-    function copyCmd(id) {
-      const input = document.getElementById(id);
-      input.select();
-      input.setSelectionRange(0, 99999);
-      document.execCommand("copy");
-      showToast("✅ تم نسخ الأمر");
-    }
-
-    function showToast(msg) {
-      const toast = document.getElementById("copy-toast");
-      toast.innerText = msg;
-      toast.style.display = "block";
-      setTimeout(() => { toast.style.display = "none"; }, 2000);
-    }
-
-    function searchTools() {
-      const searchValue = document.getElementById("search").value.toLowerCase();
-      const container = document.getElementById("tools-container");
-      const countText = document.getElementById("tool-count");
-      container.innerHTML = "";
-      const filtered = tools.filter(tool =>
-        (currentFilter === 'all' || tool.category === currentFilter) &&
-        tool.title.toLowerCase().includes(searchValue)
-      );
-      countText.innerText = `عدد الأدوات: ${filtered.length}`;
-      filtered.forEach((tool, index) => {
-        container.innerHTML += `
-          <div class="tool ${tool.category}">
-            <h2>${tool.title}</h2>
-            <p>${tool.description}</p>
-            <input type="text" id="cmd${index}" value="${tool.command}" readonly>
-            <button onclick="copyCmd('cmd${index}')">📋 نسخ</button>
-            <a href="${tool.video}" target="_blank">🎥 فيديو</a>
-          </div>
-        `;
-      });
-    }
-
-    function filterCategory(cat) {
-      currentFilter = cat;
-      renderTools(cat);
-    }
-
-    renderTools();
-  </script>
 </body>
 </html>
