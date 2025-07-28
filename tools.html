@@ -30,10 +30,6 @@
 
   <script>
     const tools = [
-      {name:'Namp',desc:'أداة قوية لفحص الشبكة، تكشف الأجهزة المتصلة، وتُظهر المنافذ المفتوحة والخدمات المشغّلة على جهاز معين. تُستخدم كثيرًا في اختبار أمان الشبكات.',cmds:'pkg update && pkg upgrade
-pkg install nmap nmap 192.168.1.1
-
-(غيّر العنوان 192.168.1.1 إلى IP الجهاز الذي تريد فحصه)', warn:'⚠️ تعليم فقط'},
       {name:'Zphisher', desc:'صفحات تصيد وهمية للهندسة الاجتماعية', cmds:'pkg update && pkg upgrade\npkg install git\ngit clone https://github.com/htr-tech/zphisher\ncd zphisher\nchmod +x zphisher.sh\nbash zphisher.sh', warn:'⚠️ تعليم فقط'},
       {name:'Weeman', desc:'صفحات ويب وهمية لاختبار الأمان', cmds:'pkg install git python2\ngit clone https://github.com/samyoyo/weeman\ncd weeman\npython2 weeman.py', warn:'⚠️ لا تستخدم ضد ضحايا حقيقيين'},
       {name:'CamPhish', desc:'التقاط صور من كاميرا الهدف (اختبار)', cmds:'pkg install git\ngit clone https://github.com/techchipnet/CamPhish\ncd CamPhish\nbash camphish.sh', warn:'⚠️ الاستخدام الأخلاقي فقط'},
