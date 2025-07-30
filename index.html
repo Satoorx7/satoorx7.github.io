@@ -16,49 +16,71 @@
   <meta http-equiv="X-Content-Type-Options" content="nosniff">
   <meta name="referrer" content="no-referrer">
 
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <title>Matrix خلفية</title>
   <style>
-    body {
-      font-family: 'Cairo', sans-serif;
-      background: linear-gradient(-45deg, #8e2de2, #4a00e0, #00c9ff, #92fe9d);
-      color: #f0f0f0;
-      line-height: 1.7;
+    body, html {
       margin: 0;
       padding: 0;
+      overflow: hidden;
+      background: black;
     }
-    header {
-      background: #e60000;
-      padding: 20px;
-      text-align: center;
+    canvas {
+      display: block;
     }
-    header h1 {
-      margin: 0;
-      font-size: 30px;
+  </style>
+</head>
+<body>
+  <canvas id="matrixCanvas"></canvas>
+
+  <script>
+    const canvas = document.getElementById("matrixCanvas");
+    const ctx = canvas.getContext("2d");
+
+    // حجم الشاشة
+    canvas.height = window.innerHeight;
+    canvas.width = window.innerWidth;
+
+    // الحروف التي ستسقط (يمكنك تعديلها)
+    const letters = "0101010101أبجد123456789ص";
+    const chars = letters.split("");
+
+    const fontSize = 16;
+    const columns = canvas.width / fontSize;
+
+    const drops = Array(Math.floor(columns)).fill(1);
+
+    function drawMatrix() {
+      ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      ctx.fillStyle = "#0F0"; // اللون الأخضر
+      ctx.font = fontSize + "px monospace";
+
+      for (let i = 0; i < drops.length; i++) {
+        const text = chars[Math.floor(Math.random() * chars.length)];
+        ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+        if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+          drops[i] = 0;
+        }
+        drops[i]++;
+      }
     }
-    section {
-      padding: 20px;
-    }
-    .topic {
-      background: #1a1a1a;
-      margin: 10px 0;
-      padding: 15px;
-      border-radius: 10px;
-    }
-    .topic h2 {
-      color: #ff3c3c;
-      font-size: 22px;
-    }
-    footer {
-      background: #111;
-      text-align: center;
-      padding: 10px;
-      font-size: 14px;
-      color: #888;
-    }
-    a {
-      color: #00c3ff;
-      text-decoration: none;
-    }
-   <style>
+
+    setInterval(drawMatrix, 35);
+
+    // لتحديث حجم الشاشة عند تغيير الحجم
+    window.addEventListener("resize", () => {
+      canvas.height = window.innerHeight;
+      canvas.width = window.innerWidth;
+    });
+  </script>
+</body>
+</html>   <style>
 .btn-page {
   background-color: #e60000;
   color: white;
