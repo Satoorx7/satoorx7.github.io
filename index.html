@@ -23,7 +23,52 @@
     }
   </style>
 </head>
-<body>
+<body <canvas id="matrixCanvas" style="position: fixed; top: 0; left: 0; z-index: -1;"></canvas>
+
+<script>
+  const canvas = document.getElementById('matrixCanvas');
+  const ctx = canvas.getContext('2d');
+
+  canvas.height = window.innerHeight;
+  canvas.width = window.innerWidth;
+
+  let chars = "01";
+  chars = chars.split("");
+
+  let font_size = 14;
+  let columns = canvas.width / font_size;
+  let drops = [];
+
+  for (let x = 0; x < columns; x++) {
+    drops[x] = 1;
+  }
+
+  function draw() {
+    ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    ctx.fillStyle = "#0f0";
+    ctx.font = font_size + "px monospace";
+
+    for (let i = 0; i < drops.length; i++) {
+      let text = chars[Math.floor(Math.random() * chars.length)];
+      ctx.fillText(text, i * font_size, drops[i] * font_size);
+
+      if (drops[i] * font_size > canvas.height && Math.random() > 0.975) {
+        drops[i] = 0;
+      }
+
+      drops[i]++;
+    }
+  }
+
+  setInterval(draw, 33);
+
+  window.addEventListener('resize', () => {
+    canvas.height = window.innerHeight;
+    canvas.width = window.innerWidth;
+  });
+</script>>
   <h1>مرحبًا بك في موقع LA12 </h1>
 </body>
 </html><!DOCTYPE html>
