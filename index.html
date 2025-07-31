@@ -1,77 +1,4 @@
 <!DOCTYPE html>
-<html lang="ar">
-<head>
-  <meta charset="UTF-8">
-  <title>موقع LA12</title>
-  <style>
-    body {
-      background-image: url('https://i.imgur.com/NHEp5vM.jpg'); /* الخلفية الآن شغالة */
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      height: 100vh;
-      margin: 0;
-      font-family: 'Arial', sans-serif;
-      color: white;
-      text-align: center;
-    }
-
-    h1 {
-      margin-top: 20%;
-      font-size: 48px;
-      text-shadow: 2px 2px 8px #000;
-    }
-  </style>
-</head>
-<body <canvas id="matrixCanvas" style="position: fixed; top: 0; left: 0; z-index: -1;"></canvas>
-
-<script>
-  const canvas = document.getElementById('matrixCanvas');
-  const ctx = canvas.getContext('2d');
-
-  canvas.height = window.innerHeight;
-  canvas.width = window.innerWidth;
-
-  let chars = "01";
-  chars = chars.split("");
-
-  let font_size = 14;
-  let columns = canvas.width / font_size;
-  let drops = [];
-
-  for (let x = 0; x < columns; x++) {
-    drops[x] = 1;
-  }
-
-  function draw() {
-    ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-    ctx.fillStyle = "#0f0";
-    ctx.font = font_size + "px monospace";
-
-    for (let i = 0; i < drops.length; i++) {
-      let text = chars[Math.floor(Math.random() * chars.length)];
-      ctx.fillText(text, i * font_size, drops[i] * font_size);
-
-      if (drops[i] * font_size > canvas.height && Math.random() > 0.975) {
-        drops[i] = 0;
-      }
-
-      drops[i]++;
-    }
-  }
-
-  setInterval(draw, 33);
-
-  window.addEventListener('resize', () => {
-    canvas.height = window.innerHeight;
-    canvas.width = window.innerWidth;
-  });
-</script>>
-  <h1>مرحبًا بك في موقع LA12 </h1>
-</body>
-</html><!DOCTYPE html>
 
 <html lang="ar">
 <<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:;">
@@ -81,7 +8,7 @@
 <meta name="robots" content="noindex, nofollow">>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>دليل الهاكر الأخلاقي - LA12</title>
+  <title>دليل الهاكر الأخلاقي - Black wolF </title>
 
   <!-- ✅ رؤوس حماية مهمة -->
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://www.youtube.com https://telegram.org; style-src 'self' 'unsafe-inline'; img-src * data:;">
@@ -153,7 +80,7 @@
 </head>
 <body>
   <header>
-    <h1>👨‍💻 دليل الهاكر الأخلاقي - LA12 👨‍💻</h1>
+    <h1>💻 دليل الهاكر الأخلاقي - Black wolF 💻</h1>
     <p>ابدأ رحلتك في عالم الأمن السيبراني من الصفر حتى الاحتراف</p>
   </header>
 
@@ -180,7 +107,7 @@
 يُشبه حارس الأبواب الرقمية الذي يمنع اللصوص من الدخول.
 مجال عمله واسع ويشمل حماية المواقع، التطبيقات، السيرفرات، وحتى الشبكات السحابية.
 مطلوب بشدة في سوق العمل وتصل رواتبه إلى أرقام كبيرة في الدول المتقدمة.
-هو بطل غير مرئي في عالم التقنية، يعمل خلف الكواليس لحماية الناس والمؤسسات. ومن اشهرهم المعروف ب (LA12)
+هو بطل غير مرئي في عالم التقنية، يعمل خلف الكواليس لحماية الناس والمؤسسات. ومن اشهرهم المعروف ب Black wolF (LA12)
 .
       </p>
     </div>
@@ -222,7 +149,7 @@ Hack The Box
 TryHackMe
 موقع Cybrare
 موقع Udemy
-قناة SaToor X7 😎 (لو درت وحدة)
+قناة Black wolF 
 ابدأ بشهادة: CEH - Certified Ethical Hacker (محتواها مجاني أيضًا). 
 
 
@@ -415,7 +342,7 @@ YouTube فيه شروحات كثيرة (ابحث: "تعلم الهكر الأخ�
 
 
   <footer>
-    <p>حقوق النشر مع مراقبة تامة  © 2025 LA12 - جميع الحقوق محفوظة</p>
+    <p>حقوق النشر © 2025 Black wolF   - جميع الحقوق محفوظة</p>
   </footer>
 </body> 
 </html>
