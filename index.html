@@ -86,25 +86,25 @@
   </div>
 
   <footer>© 2021 - تصميم SaToor x7</footer>
+<script>
+  const texts = [
+    "منوّر الموقع ❤️",
+    "مرحبا بك يا زائرنا العزيز 👋",
+    "استمتع بتجربتك في موقعي 🚀",
+    "SaToor x7 يرحب بك 💪"
+  ];
 
-  <script>
-    const texts = [
-      "منوّر الموقع ❤️",
-      "مرحبا بك يا زائرنا العزيز 👋",
-      "استمتع بتجربتك في موقعي 🚀",
-      "SaToor x7 يرحب بك 💪"
-    ];
+  let index = 0;
+  setInterval(() => {
+    index = (index + 1) % texts.length;
+    document.getElementById("welcome-text").textContent = texts[index];
+  }, 2500);
 
-    let index = 0;
-    setInterval(() => {
-      index = (index + 1) % texts.length;
-      document.getElementById("welcome-text").textContent = texts[index];
-    }, 2500);
+  function goToMain() {
+    // بدل الرابط هنا برابط حسابك في إنستغرام
+    window.location.href = "https://www.instagram.com/satoorx7";
+  }
+</script>
 
-    function goToMain() {
-      alert("🚀 سيتم نقلك إلى الصفحة الرئيسية (يمكنك تعديل الرابط أدناه)");
-      window.location.href = "https://satoorx7.github.io"; // غيّر هذا الرابط كما تشاء
-    }
-  </script>
 </body>
 </html>
