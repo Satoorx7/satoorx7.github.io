@@ -1,110 +1,39 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en" >
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>مرحبًا بك!</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: "Cairo", sans-serif;
-    }
+  <meta charset="UTF-8">
+  <title>Home </title>
+<link rel="stylesheet" href="CSS/style.css">
 
-    body {
-      background: linear-gradient(135deg, #111, #222, #000);
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      color: #fff;
-      overflow: hidden;
-    }
-
-    .container {
-      text-align: center;
-      animation: fadeIn 2s ease-in-out;
-    }
-
-    h1 {
-      font-size: 3em;
-      margin-bottom: 100px;
-      letter-spacing: 2px;
-      animation: glow 2s infinite alternate;
-    }
-
-    p {
-      font-size: 1.5em;
-      color: #ccc;
-      margin-bottom: 20px;
-      transition: 0.3s;
-    }
-
-    .btn {
-      padding: 10px 25px;
-      border: 2px solid #fff;
-      border-radius: 30px;
-      background: transparent;
-      color: #fff;
-      cursor: pointer;
-      font-size: 1.1em;
-      transition: 0.3s;
-    }
-
-    .btn:hover {
-      background: #fff;
-      color: #000;
-      transform: scale(1.1);
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(50px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes glow {
-      from { text-shadow: 0 0 5px #0ff; }
-      to { text-shadow: 0 0 25px #00f6ff; }
-    }
-
-    footer {
-      position: absolute;
-      bottom: 15px;
-      text-align: center;
-      width: 100%;
-      font-size: 0.9em;
-      color: #777;
-    }
-  </style>
 </head>
 <body>
-  <div class="container">
-    <h1>👋 أهلا بكم يا تلاميذ 1AS4 اعزاء </h1>
-    <p id="welcome-text">منوّر الموقع ❤️</p>
-    <button class="btn" onclick="goToMain()">ادخل الآن</button>
+  
+  
+
+<!-- Starbackground -->
+<div id='stars'></div>
+<div id='stars2'></div>
+<div id='stars3'></div>
+
+<!-- parallax text/java -->
+<div id="parallax">
+  <div class="layer" data-depth="0.6">
+  
+<!-- text -->
+    <div class="some-space">
+      <h1>Welcome</h1>
+    </div>
+  
+  </div>
+  <div class="layer" data-depth="0.4">
+    <div id="particles-js"></div>
   </div>
 
-  <footer>© 2025 - تصميم_ LAMRI ALI_ SaToor x7</footer>
-<script>
-  const texts = [
-    "زيارة ممتعة ",
-    "مرحبا بك يا زائرنا العزيز 👋",
-    "استمتع بتجربتك في موقعي 🚀",
-    "SaToor x7 يرحب بكم 💯"
-  ];
-
-  let index = 0;
-  setInterval(() => {
-    index = (index + 1) % texts.length;
-    document.getElementById("welcome-text").textContent = texts[index];
-  }, 2500);
-
-  function goToMain() {
-    // بدل الرابط هنا برابط حسابك في إنستغرام
-    window.location.href = "https://www.instagram.com/satoorx7";
-  }
-</script>
+<!-- Button -->
+  <div class="layer" data-depth="0.3">
+    <div class="some-more-space1"><a href="https://codepen.io/figo-kolsteren" target="blank">Continue to website</a></div>
+  </div>
+</div>
 
 </body>
 </html>
