@@ -1,93 +1,41 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" >
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Welcome</title>
-  <style>
-    /* خلفية النجوم */
-    html, body {
-      margin: 0;
-      height: 100%;
-      overflow: hidden;
-      background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
-      font-family: "Cairo", sans-serif;
-      color: #fff;
-      text-align: center;
-    }
-
-    #stars, #stars2, #stars3 {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      background-repeat: repeat;
-      background-size: contain;
-      animation: moveStars 200s linear infinite;
-    }
-
-    #stars {
-      background-image: url("https://www.transparenttextures.com/patterns/stardust.png");
-      animation-duration: 100s;
-    }
-
-    #stars2 {
-      background-image: url("https://www.transparenttextures.com/patterns/stardust.png");
-      animation-duration: 150s;
-      opacity: 0.6;
-    }
-
-    #stars3 {
-      background-image: url("https://www.transparenttextures.com/patterns/stardust.png");
-      animation-duration: 200s;
-      opacity: 0.3;
-    }
-
-    @keyframes moveStars {
-      from {background-position: 0 0;}
-      to {background-position: 10000px 5000px;}
-    }
-
-    /* النص */
-    h1 {
-      font-size: 70px;
-      letter-spacing: 5px;
-      margin-top: 35vh;
-      animation: fadeIn 2s ease-in-out;
-    }
-
-    @keyframes fadeIn {
-      from {opacity: 0;}
-      to {opacity: 1;}
-    }
-
-    /* الزر */
-    a {
-      display: inline-block;
-      margin-top: 30px;
-      padding: 15px 40px;
-      border: 2px solid #fff;
-      color: #fff;
-      text-decoration: none;
-      font-weight: bold;
-      border-radius: 30px;
-      transition: 0.3s;
-    }
-
-    a:hover {
-      background: #fff;
-      color: #000;
-      transform: scale(1.1);
-    }
-  </style>
+  <title>Home </title>
+  <link rel="stylesheet" href="CSS/style.css">
 </head>
 <body>
+  <!-- Starbackground -->
+  <div id='stars'></div>
+  <div id='stars2'></div>
+  <div id='stars3'></div>
 
-  <div id="stars"></div>
-  <div id="stars2"></div>
-  <div id="stars3"></div>
+  <!-- parallax text/java -->
+  <div id="parallax">
+    <div class="layer" data-depth="0.6">
+      <!-- text -->
+      <div class="some-space">
+        <h1>Welcome</h1>
+      </div>
+    </div>
 
-  <h1>Welcome</h1>
-  <a href="https://satoorx7.github.io">Continue to website</a>
+    <div class="layer" data-depth="0.4">
+      <div id="particles-js"></div>
+    </div>
 
+    <!-- Button -->
+    <div class="layer" data-depth="0.3">
+      <div class="some-more-space1">
+        <a href="https://satoorx7.github.io/home" target="_blank">Continue to website</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- سكربتات جافا -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
+  <script src="JS/particles.min.js"></script>
+  <script src="JS/app.js"></script>
 </body>
 </html>
