@@ -18,7 +18,7 @@
     .card-container {
       position: relative;
       width: 400px;
-      height: 250px;
+      height: 350px; /* طول البطاقة أطول */
     }
 
     /* البطاقة */
@@ -32,27 +32,42 @@
       justify-content: center;
       align-items: center;
       color: #fff;
-      font-size: 24px;
+      font-size: 28px;
       text-align: center;
       z-index: 1;
-      box-shadow: 0 0 30px rgba(0,0,0,0.7);
+      box-shadow: 0 0 20px rgba(0,0,0,0.7);
       overflow: hidden;
     }
 
-    /* الإضاءة المحيطة بالبطاقة */
-    .glow-border {
+    /* جوانب البطاقة مضاءة */
+    .glow-side {
       position: absolute;
-      top: -15px;
-      left: -15px;
-      width: calc(100% + 30px);
-      height: calc(100% + 30px);
-      border-radius: 25px;
-      background: conic-gradient(red, orange, yellow, green, cyan, blue, violet, red);
-      filter: blur(60px);
       z-index: 0;
-      animation: rotate 4s linear infinite;
-      opacity: 0.9; /* تجعل الضوء أكثر وضوحاً */
+      border-radius: 20px;
+      background: conic-gradient(red, orange, yellow, green, cyan, blue, violet, red);
+      filter: blur(25px);
+      opacity: 0.9;
+      animation: rotate 5s linear infinite;
     }
+
+    /* الجوانب الأربعة */
+    .glow-top, .glow-bottom {
+      height: 10px;
+      width: 100%;
+      left: 0;
+    }
+
+    .glow-top { top: -5px; }
+    .glow-bottom { bottom: -5px; }
+
+    .glow-left, .glow-right {
+      width: 10px;
+      height: 100%;
+      top: 0;
+    }
+
+    .glow-left { left: -5px; }
+    .glow-right { right: -5px; }
 
     @keyframes rotate {
       0% { transform: rotate(0deg); }
@@ -62,10 +77,13 @@
 </head>
 <body>
   <div class="card-container">
-    <div class="glow-border"></div>
+    <div class="glow-side glow-top"></div>
+    <div class="glow-side glow-bottom"></div>
+    <div class="glow-side glow-left"></div>
+    <div class="glow-side glow-right"></div>
     <div class="card">
       مرحبًا بك في صفحتي!
     </div>
   </div>
 </body>
-</html>		
+</html> 
