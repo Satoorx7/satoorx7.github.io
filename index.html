@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>صفحة ترحيب</title>
   <style>
-    /* إعدادات الصفحة */
     body {
       margin: 0;
       height: 100vh;
@@ -16,34 +15,43 @@
       font-family: Arial, sans-serif;
     }
 
-    /* البطاقة */
-    .card {
+    .card-container {
       position: relative;
       width: 400px;
       height: 250px;
-      background-color: #000; /* لون البطاقة أسود */
+    }
+
+    /* البطاقة */
+    .card {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      background-color: #000;
       border-radius: 20px;
-      overflow: hidden;
       display: flex;
       justify-content: center;
       align-items: center;
       color: #fff;
       font-size: 24px;
       text-align: center;
-      box-shadow: 0 0 20px rgba(0,0,0,0.5);
+      z-index: 1;
+      box-shadow: 0 0 30px rgba(0,0,0,0.7);
+      overflow: hidden;
     }
 
-    /* الإضاءة RGB المتحركة */
-    .glow {
+    /* الإضاءة المحيطة بالبطاقة */
+    .glow-border {
       position: absolute;
-      top: -50%;
-      left: -50%;
-      width: 200%;
-      height: 200%;
+      top: -15px;
+      left: -15px;
+      width: calc(100% + 30px);
+      height: calc(100% + 30px);
+      border-radius: 25px;
       background: conic-gradient(red, orange, yellow, green, cyan, blue, violet, red);
-      animation: rotate 5s linear infinite;
-      filter: blur(40px);
-      z-index: -1;
+      filter: blur(60px);
+      z-index: 0;
+      animation: rotate 4s linear infinite;
+      opacity: 0.9; /* تجعل الضوء أكثر وضوحاً */
     }
 
     @keyframes rotate {
@@ -53,9 +61,11 @@
   </style>
 </head>
 <body>
-  <div class="card">
-    <div class="glow"></div>
-    مرحبًا بك في صفحتي!
+  <div class="card-container">
+    <div class="glow-border"></div>
+    <div class="card">
+      مرحبًا بك في صفحتي!
+    </div>
   </div>
 </body>
-</html>
+</html>		
